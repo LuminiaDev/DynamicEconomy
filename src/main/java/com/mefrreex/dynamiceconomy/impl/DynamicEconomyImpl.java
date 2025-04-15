@@ -6,9 +6,11 @@ import com.mefrreex.dynamiceconomy.api.controller.price.PriceController;
 import com.mefrreex.dynamiceconomy.api.model.ItemData;
 import com.mefrreex.dynamiceconomy.exception.DynamicEconomyException;
 import lombok.Builder;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @Builder
 public class DynamicEconomyImpl implements DynamicEconomy {
@@ -17,9 +19,9 @@ public class DynamicEconomyImpl implements DynamicEconomy {
     private final ItemController itemController;
     private final PriceController priceController;
 
-    public DynamicEconomyImpl(ItemController itemController, PriceController priceController) {
-        this.itemController = itemController;
-        this.priceController = priceController;
+    public DynamicEconomyImpl(@NotNull ItemController itemController, @NotNull PriceController priceController) {
+        this.itemController = Objects.requireNonNull(itemController, "itemController must not be null");
+        this.priceController = Objects.requireNonNull(priceController, "priceController must not be null");
     }
 
     @Override
