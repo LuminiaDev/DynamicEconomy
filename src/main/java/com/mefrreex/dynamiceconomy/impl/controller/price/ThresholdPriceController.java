@@ -5,19 +5,26 @@ import com.mefrreex.dynamiceconomy.api.model.ItemData;
 
 import java.util.Map;
 
+/**
+ * Represents a price controller that applies multiplier factors based on quantity thresholds.
+ * Prices increase when item quantities exceed configured threshold levels.
+ */
 public class ThresholdPriceController implements PriceController {
 
     private final Map<Double, Double> thresholds;
 
     /**
-     * Creates the ThresholdPriceController class.
+     * Creates a new ThresholdPriceController instance.
      *
-     * @param thresholds A map with thresholds and multiplier values
-     * {@code Map.of(
-     *      100.0, 2.0,
-     *      50.0, 1.5,
-     *      10.0, 1.2
-     * );}
+     * @param thresholds A map of quantity thresholds to price multipliers where:
+     *                   - Key: Minimum quantity threshold
+     *                   - Value: Price multiplier to apply when threshold is reached
+     *                   Example:
+     *                   {@code Map.of(
+     *                       100.0, 2.0,  // When stock ≥ 100, price doubles
+     *                       50.0, 1.5,   // When stock ≥ 50, price ×1.5
+     *                       10.0, 1.2    // When stock ≥ 10, price ×1.2
+     *                   )}
      */
     public ThresholdPriceController(Map<Double, Double> thresholds) {
         this.thresholds = thresholds;

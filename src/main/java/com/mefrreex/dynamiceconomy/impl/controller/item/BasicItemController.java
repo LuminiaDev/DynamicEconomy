@@ -7,11 +7,21 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 import java.util.function.Function;
 
+/**
+ * Represents a basic item controller to retrieve ItemData by its id.
+ */
 public class BasicItemController implements ItemController {
 
     private final Function<String, ItemData> itemResolver;
     private final ItemData defaultData;
 
+    /**
+     * Creates a new BasicItemController instance.
+     *
+     * @param itemResolver Item by id resolver lambda
+     * @param defaultData Item data by default
+     * @exception NullPointerException if itemResolver or defaultData is null
+     */
     public BasicItemController(
             @NotNull Function<String, ItemData> itemResolver,
             @NotNull ItemData defaultData

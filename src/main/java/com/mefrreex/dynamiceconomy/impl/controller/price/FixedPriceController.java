@@ -3,6 +3,9 @@ package com.mefrreex.dynamiceconomy.impl.controller.price;
 import com.mefrreex.dynamiceconomy.api.controller.price.PriceController;
 import com.mefrreex.dynamiceconomy.api.model.ItemData;
 
+/**
+ * It is a fixed price controller. The item will have a base price.
+ */
 public class FixedPriceController implements PriceController {
 
     @Override
