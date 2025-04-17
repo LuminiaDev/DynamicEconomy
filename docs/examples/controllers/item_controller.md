@@ -29,7 +29,7 @@ public class CustomItemController implements ItemController {
 ## Or use the basic implementation
 You can use the basic implementation of ItemController - BasicItemController, which is enough to work with
 ```java
-temController controller = new BasicItemController(id -> switch (id) {
+ItemController controller = new BasicItemController(id -> switch (id) {
         case "bread" -> new ItemData(10, 50);
         case "apple" -> new ItemData(5, 25);
         default -> null;
