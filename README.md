@@ -18,3 +18,37 @@ dynamicEconomy.decreaseItemCount("bread", 1);
 ```
 
 More use cases can be found [here](docs/examples)
+
+## Maven
+Adding repo:
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+Adding dependency:
+```xml
+<dependency>
+    <groupId>com.github.LuminiaBedrock</groupId>
+    <artifactId>DynamicEconomy</artifactId>
+    <version>1.0.3</version>
+</dependency>
+```
+
+## Gradle
+Adding repo:
+```groovy
+maven {
+    name "jitpack"
+    url "https://jitpack.io"
+}
+```
+
+Adding dependency:
+```groovy
+implementation "com.github.LuminiaBedrock:DynamicEconomy:1.0.3"
+```
