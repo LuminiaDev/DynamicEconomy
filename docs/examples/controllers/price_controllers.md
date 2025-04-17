@@ -25,5 +25,24 @@ PriceController controller = new ThresholdPriceController(Map.of(
 ___
 
 [CompositePriceController](../../../src/main/java/com/mefrreex/dynamiceconomy/impl/controller/price/CompositePriceController.java) - A composite price controller that chains multiple price calculation strategies. Applies each controller in sequence, using the previous result as input for the next.
+
+Example of usage CompositePriceController:
+```java
+PriceController controller = new CompositePriceController(List.of(
+        new ScaledPriceController(2),
+        new DemandBoostPriceController(3, 1.5)
+));
+```
+
 ___
 [DelegatingPriceController](../../../src/main/java/com/mefrreex/dynamiceconomy/impl/controller/price/DelegatingPriceController.java) - A delegating price controller that routes price calculations to specific controllers based on item ID, with fallback to a default controller when no specific controller is found.
+
+Example of usage DelegatingPriceController:
+```java
+PriceController controller = new DelegatingPriceController(id -> switch (id) {
+    case "bread" -> new ScaledPriceController(2);
+    case "apple" -> new ScaledPriceController(0.3);
+    case "milk" -> new ScaledPriceController(0.5);
+    default -> null;
+}, new FixedPriceController());
+```
