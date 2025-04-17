@@ -17,4 +17,4 @@ double price = dynamicEconomy.getCurrentPrice("bread");
 dynamicEconomy.decreaseItemCount("bread", 1);
 ```
 
-More use cases can be found [here](docs)
+More use cases can be found [here](docs/examples)
