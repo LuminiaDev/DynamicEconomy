@@ -5,8 +5,8 @@ import com.mefrreex.dynamiceconomy.api.controller.item.ItemController;
 import com.mefrreex.dynamiceconomy.api.controller.price.PriceController;
 import com.mefrreex.dynamiceconomy.api.model.ItemData;
 import com.mefrreex.dynamiceconomy.exception.DynamicEconomyException;
-import lombok.Builder;
 import org.jetbrains.annotations.NotNull;
+import lombok.Builder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +32,11 @@ public class DynamicEconomyImpl implements DynamicEconomy {
         }
         int currentCount = itemCounts.getOrDefault(id, data.initialAmount());
         return priceController.calculatePrice(id, currentCount, data);
+    }
+
+    @Override
+    public int getItemCount(String id) {
+        return itemCounts.getOrDefault(id, 0);
     }
 
     @Override

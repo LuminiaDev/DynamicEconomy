@@ -20,6 +20,14 @@ public interface DynamicEconomy {
     double getCurrentPrice(String id);
 
     /**
+     * Gets the current amount of an item by its ID.
+     *
+     * @param id The item identifier
+     * @return The current amount of the item
+     */
+    int getItemCount(String id);
+
+    /**
      * Increases the count of an item in the economy.
      *
      * @param id The item identifier

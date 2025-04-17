@@ -2,7 +2,9 @@ package com.mefrreex.dynamiceconomy.impl.controller.price;
 
 import com.mefrreex.dynamiceconomy.api.controller.price.PriceController;
 import com.mefrreex.dynamiceconomy.api.model.ItemData;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
 import java.util.function.Function;
 
 /**
@@ -20,9 +22,12 @@ public class DelegatingPriceController implements PriceController {
      * @param controllerResolver Function that resolves an appropriate controller for a given item ID
      * @param defaultController Fallback controller to use when resolver returns null
      */
-    public DelegatingPriceController(Function<String, PriceController> controllerResolver, PriceController defaultController) {
-        this.controllerResolver = controllerResolver;
-        this.defaultController = defaultController;
+    public DelegatingPriceController(
+        @NotNull Function<String, PriceController> controllerResolver,
+        @NotNull PriceController defaultController
+    ) {
+        this.controllerResolver = Objects.requireNonNull(controllerResolver, "controllerResolver must not be null");
+        this.defaultController = Objects.requireNonNull(defaultController, "defaultController must not be null");
     }
 
     @Override

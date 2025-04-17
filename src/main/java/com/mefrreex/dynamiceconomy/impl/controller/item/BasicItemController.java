@@ -23,8 +23,8 @@ public class BasicItemController implements ItemController {
      * @exception NullPointerException if itemResolver or defaultData is null
      */
     public BasicItemController(
-            @NotNull Function<String, ItemData> itemResolver,
-            @NotNull ItemData defaultData
+        @NotNull Function<String, ItemData> itemResolver,
+        @NotNull ItemData defaultData
     ) {
         this.itemResolver = Objects.requireNonNull(itemResolver, "itemResolver must not be null");
         this.defaultData = Objects.requireNonNull(defaultData, "defaultData must not be null");
