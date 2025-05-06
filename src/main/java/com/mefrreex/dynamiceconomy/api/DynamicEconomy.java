@@ -20,6 +20,15 @@ public interface DynamicEconomy {
     double getCurrentPrice(String id);
 
     /**
+     * Gets the price of an item in the specified amount by its ID.
+     *
+     * @param id The item identifier
+     * @param amount Amount of item
+     * @return The current price of the item
+     */
+    double getTotalPrice(String id, int amount);
+
+    /**
      * Gets the current amount of an item by its ID.
      *
      * @param id The item identifier

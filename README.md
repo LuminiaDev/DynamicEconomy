@@ -35,7 +35,7 @@ Adding dependency:
 <dependency>
     <groupId>com.github.LuminiaBedrock</groupId>
     <artifactId>DynamicEconomy</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
 </dependency>
 ```
 
@@ -50,5 +50,5 @@ maven {
 
 Adding dependency:
 ```groovy
-implementation "com.github.LuminiaBedrock:DynamicEconomy:1.0.3"
+implementation "com.github.LuminiaBedrock:DynamicEconomy:1.0.4"
 ```

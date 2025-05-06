@@ -35,6 +35,32 @@ public class DynamicEconomyImpl implements DynamicEconomy {
     }
 
     @Override
+    public double getTotalPrice(String id, int amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Amount must be non-negative");
+        }
+
+        if (amount == 1) {
+            return this.getCurrentPrice(id);
+        }
+
+        ItemData data = itemController.getItemData(id);
+        if (data == null) {
+            throw new DynamicEconomyException("Item data not found for id: " + id);
+        }
+
+        int currentCount = itemCounts.getOrDefault(id, data.initialAmount());
+        double totalPrice = 0;
+
+        for (int i = 0; i < amount; i++) {
+            int simulatedCount = Math.max(0, currentCount - i);
+            totalPrice += priceController.calculatePrice(id, simulatedCount, data);
+        }
+
+        return totalPrice;
+    }
+
+    @Override
     public int getItemCount(String id) {
         return itemCounts.getOrDefault(id, 0);
     }

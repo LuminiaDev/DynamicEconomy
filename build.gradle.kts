@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "com.mefrreex.dynamiceconomy"
-version = "1.0.3-SNAPSHOT"
+version = "1.0.4-SNAPSHOT"
 
 java {
     toolchain {
