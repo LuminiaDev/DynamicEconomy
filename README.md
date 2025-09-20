@@ -22,20 +22,18 @@ More use cases can be found [here](docs/examples)
 ## Maven
 Adding repo:
 ```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
+<repository>
+    <id>luminiadev-repository-snapshots</id>
+    <url>https://repo.luminiadev.com/snapshots</url>
+</repository>
 ```
 
 Adding dependency:
 ```xml
 <dependency>
-    <groupId>com.github.LuminiaBedrock</groupId>
-    <artifactId>DynamicEconomy</artifactId>
-    <version>1.0.4</version>
+    <groupId>com.mefrreex.dynamiceconomy</groupId>
+    <artifactId>dynamiceconomy</artifactId>
+    <version>1.0.4-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -43,12 +41,12 @@ Adding dependency:
 Adding repo:
 ```groovy
 maven {
-    name "jitpack"
-    url "https://jitpack.io"
+    name = "luminiadevRepositorySnapshots"
+    url = uri("https://repo.luminiadev.com/snapshots")
 }
 ```
 
 Adding dependency:
 ```groovy
-implementation "com.github.LuminiaBedrock:DynamicEconomy:1.0.4"
+implementation "com.mefrreex.dynamiceconomy:dynamiceconomy:1.0.4-SNAPSHOT"
 ```
